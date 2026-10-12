@@ -51,3 +51,16 @@ Changed: The worked-example value and return type are tested separately so each 
 Rejected: Combining invalid quantities into one test because the brief requires independent cases for `0`, a negative value, and `1.5`.
 
 By hand: I reviewed the proposed cases, checked their expected results against the brief, and approved separating each invalid-quantity case.
+
+## 2026-10-12 — cartTotal implementation
+Tool: OpenAI Codex.
+
+Asked for: Implement `cartTotal` so the specification-based tests pass.
+
+Kept: A direct loop that validates each item while accumulating the subtotal, followed by explicit VAT, shipping, and final rounding calculations.
+
+Changed: Shipping is selected from the subtotal before VAT, including the case where VAT alone would raise the amount above the free-shipping threshold.
+
+Rejected: Extra input validation, helper abstractions, and external dependencies because they are outside the contract.
+
+By hand: I reviewed the implementation against the worked example and the required error cases.
