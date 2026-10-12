@@ -16,9 +16,8 @@
 
 - `src/cart.js` contains the implementation.
 - `test/cart.test.js` contains specification-based tests.
-- `scripts/check-format.js` is the dependency-free format check when the
-  quality gate is configured.
-- `.github/workflows/ci.yml` runs the quality gate when CI is configured.
+- `scripts/check-format.js` contains the dependency-free format check.
+- `.github/workflows/ci.yml` runs the quality gate on pushes and pull requests.
 - `BRIEF.md`, `AI-LOG.md`, and `SELF_ASSESSMENT_REPORT.md` are assignment
   evidence.
 
@@ -35,9 +34,9 @@ change. Do not make unrelated changes.
 ## Commands and quality gate
 
 - `npm test` runs the test suite and must pass before the task is complete.
-- Once configured, `npm run syntax:check` checks JavaScript syntax.
-- Once configured, `npm run format:check` checks repository formatting.
-- Once configured, `npm run gate` runs syntax checking, format checking, and tests.
+- `npm run syntax:check` checks JavaScript syntax.
+- `npm run format:check` checks repository formatting.
+- `npm run gate` runs syntax checking, format checking, and tests.
 - CI must use Node.js 22, run `npm run gate` on pushes and pull requests, and pass on the submitted commit.
 
 ## Workflow
