@@ -38,3 +38,16 @@ Changed: `AGENTS.md` was updated to describe the quality gate and CI as configur
 Rejected: Dependency installation, caching, test matrices, deployment steps, and secrets because this assignment is dependency-free and only requires the quality gate.
 
 By hand: I reviewed the workflow against `AGENTS.md` and confirmed that its triggers, Node.js version, permissions, and quality-gate command match the intended CI setup.
+
+## 2026-10-12 — cartTotal specification tests
+Tool: OpenAI Codex.
+
+Asked for: Replace the starter test with independent specification-based tests for every public behaviour in `BRIEF.md`.
+
+Kept: Separate tests for the worked example, numeric return type, empty cart, shipping based on the subtotal before VAT, exact free-shipping threshold, whole-dong rounding, negative price, and each invalid quantity case.
+
+Changed: The worked-example value and return type are tested separately so each test fails for one clear reason. A below-threshold case whose VAT-inclusive amount exceeds the threshold was added to verify that shipping is decided before VAT.
+
+Rejected: Combining invalid quantities into one test because the brief requires independent cases for `0`, a negative value, and `1.5`.
+
+By hand: I reviewed the proposed cases, checked their expected results against the brief, and approved separating each invalid-quantity case.
